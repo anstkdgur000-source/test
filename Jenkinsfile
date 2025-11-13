@@ -26,10 +26,10 @@ pipeline {
             steps {
                 echo "🚀 Deploy Stage"
                 sh '''
-                sudo mkdir -p /var/www/html/test
+                 mkdir -p /var/www/html/test
 
                 # Jenkins 워크스페이스에서 결과물 복사
-                sudo cp -r * /var/www/html/test/
+                 cp -r * /var/www/html/test/
 
                 echo "배포 완료!"
                 '''
