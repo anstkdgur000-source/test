@@ -25,7 +25,14 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "🚀 Deploy Stage"
-                sh 'echo Deploying application...'
+                sh '''
+                sudo mkdir -p /var/www/html/test
+
+                # Jenkins 워크스페이스에서 결과물 복사
+                sudo cp -r * /var/www/html/test/
+
+                echo "배포 완료!"
+                '''
             }
         }
     }
